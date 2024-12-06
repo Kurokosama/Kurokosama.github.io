@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>How to check OS version in Linux command line terminal | JW Tech Tips</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">JW Tech Tips</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">A Homelab Enthusiast&#39;s Playhouse</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/contact">Contact Me</a>
+        
+          <a class="main-nav-link" href="/about">About Me</a>
+        
+          <a class="main-nav-link" href="/links">Useful Links</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-how-to-check-os-version-in-linux-command-line-terminal" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/how-to-check-os-version-in-linux-command-line-terminal/" class="article-date">
+  <time class="dt-published" datetime="2018-08-05T06:10:41.000Z" itemprop="datePublished">2018-08-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      How to check OS version in Linux command line terminal
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Linux is a <strong>powerful, flexible, and open-source operating system</strong> with a rich ecosystem of distributions. Whether you’re a system administrator, developer, or curious user, understanding how to identify your specific Linux environment is crucial.</p>
+<h2 id="Why-Knowing-Your-Linux-Version-Matters"><a href="#Why-Knowing-Your-Linux-Version-Matters" class="headerlink" title="Why Knowing Your Linux Version Matters"></a>Why Knowing Your Linux Version Matters</h2><p>Identifying your Linux distribution and version is essential for:</p>
+<ul>
+<li>Troubleshooting system issues</li>
+<li>Ensuring software compatibility</li>
+<li>Managing system updates</li>
+<li>Checking security patch levels</li>
+<li>Verifying system specifications for technical support</li>
+</ul>
+<h2 id="6-Proven-Methods-to-Check-Your-Linux-OS-Version"><a href="#6-Proven-Methods-to-Check-Your-Linux-OS-Version" class="headerlink" title="6 Proven Methods to Check Your Linux OS Version"></a>6 Proven Methods to Check Your Linux OS Version</h2><h3 id="1-Using-lsb-release-a-The-Standard-Distribution-Identifier"><a href="#1-Using-lsb-release-a-The-Standard-Distribution-Identifier" class="headerlink" title="1. Using lsb_release -a: The Standard Distribution Identifier"></a>1. Using <code>lsb_release -a</code>: The Standard Distribution Identifier</h3><p>The <code>lsb_release</code> command provides comprehensive Linux Standard Base and distribution-specific information.</p>
+<p><strong>Quick Steps:</strong></p>
+<ol>
+<li>Open your terminal</li>
+<li>Execute the following command:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsb_release -a</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example Output:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Distributor ID: Debian</span><br><span class="line">Description:    Debian GNU/Linux 9.5 (stretch)</span><br><span class="line">Release:        9.5</span><br><span class="line">Codename:       stretch</span><br></pre></td></tr></table></figure>
+
+<p><strong>Pro Tip:</strong> This command works across most major Linux distributions, making it a reliable first-line method for version identification.</p>
+<h3 id="2-Exploring-etc-os-release-The-Configuration-File-Method"><a href="#2-Exploring-etc-os-release-The-Configuration-File-Method" class="headerlink" title="2. Exploring /etc/os-release: The Configuration File Method"></a>2. Exploring <code>/etc/os-release</code>: The Configuration File Method</h3><p>The <code>/etc/os-release</code> file contains detailed system release information:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /etc/os-release</span><br></pre></td></tr></table></figure>
+
+<p><strong>Typical Output:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PRETTY_NAME=&quot;Debian GNU/Linux 9 (stretch)&quot;</span><br><span class="line">NAME=&quot;Debian GNU/Linux&quot;</span><br><span class="line">VERSION_ID=&quot;9&quot;</span><br><span class="line">VERSION=&quot;9 (stretch)&quot;</span><br><span class="line">ID=debian</span><br><span class="line">HOME_URL=&quot;https://www.debian.org/&quot;</span><br><span class="line">SUPPORT_URL=&quot;https://www.debian.org/support&quot;</span><br><span class="line">BUG_REPORT_URL=&quot;https://bugs.debian.org/&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Key Insight:</strong> This method provides machine-readable information, making it excellent for scripting and automated system checks.</p>
+<h3 id="3-uname-a-Kernel-and-System-Architecture-Insights"><a href="#3-uname-a-Kernel-and-System-Architecture-Insights" class="headerlink" title="3. uname -a: Kernel and System Architecture Insights"></a>3. <code>uname -a</code>: Kernel and System Architecture Insights</h3><p>Unveil comprehensive system information with a single command:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">uname</span> -a</span><br></pre></td></tr></table></figure>
+
+<p><strong>Sample Output:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Linux yy.xxxxxxx.com 4.9.0-4-amd64 #1 SMP Debian 4.9.65-3+deb9u1 (2017-12-23) x86_64 GNU/Linux</span><br></pre></td></tr></table></figure>
+
+<p><strong>Detailed Breakdown:</strong></p>
+<ul>
+<li><code>Linux</code>: Operating system type</li>
+<li><code>yy.xxxxx.com</code>: Unique hostname</li>
+<li><code>4.9.0-4-amd64</code>: <strong>Precise kernel version</strong></li>
+<li><code>x86_64</code>: <strong>System architecture</strong></li>
+</ul>
+<h3 id="4-hostnamectl-Comprehensive-System-Information"><a href="#4-hostnamectl-Comprehensive-System-Information" class="headerlink" title="4. hostnamectl: Comprehensive System Information"></a>4. <code>hostnamectl</code>: Comprehensive System Information</h3><p>Get an extensive system overview with:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hostnamectl</span><br></pre></td></tr></table></figure>
+
+<p><strong>Typical Output:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Static hostname: my-linux-machine</span><br><span class="line">Operating System: Debian GNU/Linux 9 (stretch)</span><br><span class="line">          Kernel: Linux 4.9.0-4-amd64</span><br><span class="line">    Architecture: x86-64</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-Screenfetch-The-Visual-System-Information-Tool"><a href="#5-Screenfetch-The-Visual-System-Information-Tool" class="headerlink" title="5. Screenfetch: The Visual System Information Tool"></a>5. Screenfetch: The Visual System Information Tool</h3><p><strong>Screenfetch</strong> provides a delightful, visual representation of your system’s details.</p>
+<h4 id="Installation-for-Different-Distributions"><a href="#Installation-for-Different-Distributions" class="headerlink" title="Installation for Different Distributions"></a>Installation for Different Distributions</h4><p><strong>Debian&#x2F;Ubuntu&#x2F;Linux Mint:</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install screenfetch</span><br></pre></td></tr></table></figure>
+
+<p><strong>Fedora:</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf install screenfetch</span><br></pre></td></tr></table></figure>
+
+<p><strong>Arch Linux:</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S screenfetch</span><br></pre></td></tr></table></figure>
+
+<p><strong>Usage:</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screenfetch</span><br></pre></td></tr></table></figure>
+
+<h4 id="What-Screenfetch-Reveals"><a href="#What-Screenfetch-Reveals" class="headerlink" title="What Screenfetch Reveals:"></a>What Screenfetch Reveals:</h4><ul>
+<li>Distribution logo</li>
+<li>Kernel version</li>
+<li>System uptime</li>
+<li>Installed package count</li>
+<li>Shell details</li>
+<li>Screen resolution</li>
+<li>Desktop environment</li>
+<li>Hardware specifications (CPU, GPU, RAM)</li>
+</ul>
+<h3 id="6-Advanced-Tip-Distribution-Specific-Files"><a href="#6-Advanced-Tip-Distribution-Specific-Files" class="headerlink" title="6. Advanced Tip: Distribution-Specific Files"></a>6. Advanced Tip: Distribution-Specific Files</h3><p>Some distributions offer unique version files:</p>
+<ul>
+<li><strong>CentOS&#x2F;Red Hat:</strong> <code>cat /etc/redhat-release</code></li>
+<li><strong>Ubuntu:</strong> <code>cat /etc/issue</code></li>
+<li><strong>Arch Linux:</strong> <code>cat /etc/arch-release</code></li>
+</ul>
+<h2 id="Best-Practices-and-Warnings"><a href="#Best-Practices-and-Warnings" class="headerlink" title="Best Practices and Warnings"></a>Best Practices and Warnings</h2><ol>
+<li><strong>Always use <code>sudo</code></strong> when system files are involved</li>
+<li>Different Linux distributions might have slight variations in command outputs</li>
+<li>Some commands might require package installation</li>
+<li>Regular system updates can change version information</li>
+</ol>
+<h2 id="Troubleshooting-Common-Issues"><a href="#Troubleshooting-Common-Issues" class="headerlink" title="Troubleshooting Common Issues"></a>Troubleshooting Common Issues</h2><ul>
+<li>If a command doesn’t work, ensure you have the necessary packages installed</li>
+<li>Some minimal Linux installations might lack certain utilities</li>
+<li>Use package managers to install missing tools</li>
+</ul>
+<p><strong>Final Pro Tip:</strong> Combine multiple methods for the most comprehensive system understanding.</p>
+<p><strong>Disclaimer:</strong> Always verify critical system information through official documentation or vendor support channels.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kurokosama.github.io/how-to-check-os-version-in-linux-command-line-terminal/" data-id="cm4chrc020001v5q06f9b9fsi" data-title="How to check OS version in Linux command line terminal" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/how-to-check-change-the-linux-time-zone/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">How to check change the linux time zone</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/how-to-check-os-version-in-linux-command-line-terminal/">How to check OS version in Linux command line terminal</a>
+          </li>
+        
+          <li>
+            <a href="/how-to-check-change-the-linux-time-zone/">How to check change the linux time zone</a>
+          </li>
+        
+          <li>
+            <a href="/Hexo_Code/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a></li></ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2024 By Autoload<br>
+      Driven - <a href="https://hexo.io/" target="_blank">Hexo</a>|Theme - <a href="https://github.com/autoload/hexo-theme-auto" target="_blank">Auto</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/contact" class="mobile-nav-link">Contact Me</a>
+  
+    <a href="/about" class="mobile-nav-link">About Me</a>
+  
+    <a href="/links" class="mobile-nav-link">Useful Links</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
